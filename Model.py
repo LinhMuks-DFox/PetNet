@@ -44,7 +44,8 @@ class PetNet(nn.Module):
         )
         self.cls_mlp = nn.Linear(self.d_model, n_class)
         # set div_item, no grad, but Parameter, for using device
-        self.positional_encoding_div_item = nn.Parameter(...)
+        # this is a constant
+        self.positional_encoding_div_term = nn.Parameter(...)
         self.image_embedding = nn.Sequential(...)  # Using a Linear mlp
 
     def image_embedding(self, x: torch.Tensor):
@@ -110,7 +111,14 @@ class PetNet(nn.Module):
         """
         Apply positional encoding to the tensor. x is a tensor of shape [batch_size, n_patch + 1, d_model]
         [batch_size, n_patch + 1, d_model] -> [batch_size, n_patch + 1, d_model]
+        using sin, cos positional encoding
         Args:
             x (torch.Tensor): _description_
         """
         pass
+
+
+if __name__ == "__main__":
+    model = PetNet()
+    x = torch.randn(3, 224, 224)
+    print(model(x).shape)  # Expected output: "torch.Size([1, 2])
