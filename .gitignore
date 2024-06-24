@@ -1,0 +1,7 @@
+PetImages/
+.venv/
+.ipynb_checkpoints/
+*.log
+*.lock
+*.pyc
+__pycache__/

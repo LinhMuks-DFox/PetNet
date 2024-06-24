@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "bcls-final"
+version = "0.1.0"
+description = ""
+authors = ["mux <muxxum65536@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "^2.3.1"
+torchvision = "^0.18.1"
+torchaudio = "^2.3.1"
+scikit-learn = "^1.5.0"
+jupyter = "^1.0.0"
+matplotlib = "^3.9.0"
+tqdm = "^4.66.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
